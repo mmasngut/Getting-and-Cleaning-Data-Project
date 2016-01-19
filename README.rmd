@@ -1,0 +1,56 @@
+---
+title: "Getting and Cleaning Data Course Project"
+author: "M. Masngut"
+date: "19 January 2016"
+output: html_document
+---
+***
+
+###run_analysis.R
+***
+The script does the following :
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names.
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+###Running the Script
+***
+To run the script, source run_analysis.R. After running, you will see the following output as the script works:
+
+
+###Process
+***
+1. Merge training and test datasets:
+  + Read dataset, subject and activity labels from source
+  + Merge training and test datasets into a single dataset. This is data table.
+
+2. Extract measurement with mean and standard deviation features
+  + Get list of measurements
+  + Extract measurements with mean and standard deviation features  (list of measurements as in CodeBook.rmd under Extracted Features).
+  + Subset data table for features on mean and standard deviation only.
+  + Assign names of data table to features names (not number) with some cleanup to the names by removing "()" and substitude "-" with "_".
+
+3. Assign activities names to data label with some cleanup by reformatting activities name to lower case.
+
+4. Merge data table with ID field which are subject and activity.  This is clean dataset.
+
+5. Write out the clean dataset to disk. 
+
+6. To create second independent tidy data,  using dplyr package :
+  + Group by the clean dataset by its subject and activity using group_by function.
+  + Compute mean for each measurements by group (subject and activity) using summarise_each and mean function.
+  + Write out the output to disk. 
+
+
+###Output
+***
+- First output of this script is a data file of clean data stored in "./data/cleanData.txt".
+- Second output is a data file for mean of each variables stored in "./data/meanData.txt"
+
+
+***
+
+  
