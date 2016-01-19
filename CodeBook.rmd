@@ -6,7 +6,7 @@ output:
   html_document: 
     keep_md: yes
 ---
-***
+
 ##Dataset
 ***
 - Training data : 7352  dataset 
@@ -110,4 +110,4 @@ nrow(cleanData)
 features <- read.table("./data/features.txt")
 grep("mean\\(\\)|std\\(\\)", features[,2])
 ```
-***
+
