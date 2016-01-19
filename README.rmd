@@ -19,8 +19,7 @@ The script does the following :
 
 ###Running the Script
 ***
-To run the script, source run_analysis.R. After running, you will see the following output as the script works:
-
+To run the script, source run_analysis.R. 
 
 ###Process
 ***
